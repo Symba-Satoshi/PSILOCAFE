@@ -23,3 +23,74 @@ html{scroll-behavior:smooth} body{font-family:Lato,Arial,sans-serif;color:#1b1b1
   background: rgba(140, 82, 255, 0.6);
   box-shadow: 0 0 15px rgba(140,82,255,0.5);
 }
+
+
+/* GIF background + floating product cards
+   Navigation bar and footer colors are intentionally untouched. */
+body {
+  background: url('../assets/pink-glow-background.gif') center center / cover fixed no-repeat;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.08);
+  z-index: -1;
+}
+
+.hero,
+.page-hero,
+.bg-soft,
+section,
+main {
+  background: transparent !important;
+}
+
+.menu-page .page-hero,
+.menu-page main,
+.psychosphere-page .page-hero,
+.psychosphere-page main {
+  text-align: center;
+}
+
+.menu-page .product-card,
+.psychosphere-page .product-card {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  overflow: visible;
+  backdrop-filter: none;
+}
+
+.menu-page .product-card img,
+.psychosphere-page .product-card img {
+  background: transparent !important;
+  border-radius: 0;
+  filter: drop-shadow(0 24px 34px rgba(59,44,52,.24));
+  transition: transform .25s ease, filter .25s ease;
+}
+
+.menu-page .product-card:hover img,
+.psychosphere-page .product-card:hover img {
+  transform: translateY(-8px) scale(1.02);
+  filter: drop-shadow(0 30px 44px rgba(59,44,52,.32));
+}
+
+.menu-page .product-card .p-4,
+.psychosphere-page .product-card .p-4 {
+  background: transparent !important;
+  padding-top: .75rem !important;
+}
+
+.menu-page .product-card h3,
+.psychosphere-page .product-card h3 {
+  display: inline-block;
+  margin: 0 auto;
+  padding: .35rem .95rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,.42);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
